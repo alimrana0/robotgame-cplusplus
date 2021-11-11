@@ -1,0 +1,21 @@
+-- Who worked on this assignment? Provide names and GitHub usernames.
+
+
+
+-- How many hours did it take you to complete this assignment?
+
+
+
+-- Describe your approach to implementing the assignment.
+
+
+
+-- Did you use any external resources? If so, cite them below.
+
+
+
+-- (Optional) What was your favorite part of the assignment?
+
+
+
+-- (Optional) How would you improve the assignment?

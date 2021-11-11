@@ -1,0 +1,253 @@
+{
+    "suites": [
+	{
+	    "name": "worlderrors",
+	    "program": "robotsgame_main",
+	    "valgrind": true,
+	    "cases": [
+		{
+		    "input": [
+			"err_nofile"
+		    ]
+		},
+		{
+		    "input": [
+			"err_empty"
+		    ]
+		},
+		{
+		    "input": [
+			"err_not_rectangle"
+		    ]
+		},
+		{
+		    "input": [
+			"err_wrong_char"
+		    ]
+		},
+		{
+		    "input": [
+			"err_no_player"
+		    ]
+		},
+		{
+		    "input": [
+			"err_two_player"
+		    ]
+		}
+	    ]
+	},
+
+	{
+	    "name": "display",
+	    "program": "robotsgame_main",
+	    "valgrind": true,
+	    "cases": [
+		{
+		    "input": [
+			"instant_win"
+		    ]
+		},
+		{
+		    "input": [
+			"instant_lose"
+		    ]
+		},
+		{
+		    "input": [
+			"one_row"
+		    ]
+		},
+		{
+		    "input": [
+			"two_robots"
+		    ]
+		},
+		{
+		    "input": [
+			"many_robots"
+		    ]
+		},
+		{
+		    "input": [
+			"the_chase"
+		    ]
+		}
+	    ]
+	},
+
+	{
+	    "name": "moves",
+	    "program": "robotsgame_main",
+	    "valgrind": true,
+	    "cases": [
+		{
+		    "input": [
+			"one_row",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"one_row",
+			"w"
+		    ]
+		},
+		{
+		    "input": [
+			"two_robots",
+			"w",
+			"w",
+			"w"
+		    ]
+		},
+		{
+		    "input": [
+			"two_robots",
+			"w",
+			" ",
+			"w"
+		    ]
+		},
+		{
+		    "input": [
+			"many_robots",
+			"d",
+			" ",
+			"s"
+		    ]
+		},
+		{
+		    "input": [
+			"many_robots",
+			"w",
+			"w",
+			"w",
+			"d",
+			"d"
+		    ]
+		}
+	    ]
+	},
+
+	{
+	    "name": "lose",
+	    "program": "robotsgame_main",
+	    "valgrind": true,
+	    "cases": [
+		{
+		    "input": [
+			"instant_lose",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"instant_lose",
+			" "
+		    ]
+		},
+		{
+		    "input": [
+			"one_row",
+			"a",
+			"a",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"two_robots",
+			"w",
+			" ",
+			" "
+		    ]
+		},
+		{
+		    "input": [
+			"many_robots",
+			"s",
+			"a",
+			"w",
+			"a",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"the_chase",
+			"w",
+			"w",
+			"w",
+			" "
+		    ]
+		}
+	    ]
+	},
+
+	{
+	    "name": "win",
+	    "program": "robotsgame_main",
+	    "valgrind": true,
+	    "cases": [
+		{
+		    "input": [
+			"instant_win",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"instant_win",
+			" "
+		    ]
+		},
+		{
+		    "input": [
+			"one_row",
+			"a",
+			"d",
+			"a",
+			"d"
+		    ]
+		},
+		{
+		    "input": [
+			"two_robots",
+			"w",
+			"w",
+			"w",
+			"w"
+		    ]
+		},
+		{
+		    "input": [
+			"many_robots",
+			"d",
+			"w",
+			"a",
+			"s",
+			"a",
+			"a"
+		    ]
+		},
+		{
+		    "input": [
+			"the_chase",
+			"w",
+			"w",
+			"w",
+			"w",
+			"a",
+			"a",
+			"a",
+			"a",
+			"w",
+			"w",
+			"d"
+		    ]
+		}
+	    ]
+	}
+    ]
+}

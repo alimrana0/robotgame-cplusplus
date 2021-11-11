@@ -1,0 +1,52 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "make all",
+      "command": "make",
+      "args": [ "all" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "type": "shell",
+      "label": "make clean",
+      "command": "make",
+      "args": [ "clean" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "make robotsgame_main",
+      "command": "make",
+      "args": [ "robotsgame_main" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "run robotsgame_main",
+      "command": "./robotsgame_main",
+      "dependsOn": [ "make robotsgame_main" ],
+      "args": [],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": "test"
+    },
+    {
+      "type": "shell",
+      "label": "test",
+      "command": "python3",
+      "args": [ "test.py" ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test"
+    }
+  ]
+}
