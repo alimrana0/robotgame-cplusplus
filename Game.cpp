@@ -28,7 +28,7 @@ Game::input_and_read_world_from_file(const EntityCounter & counter)
 {
   cout << msg_filename << endl;
   string fileName;
-  cin >> fileName;
+  getline(cin, fileName);
   ifstream infile("world/" + fileName + ".txt");
 
   if (!infile.good()) {
@@ -138,7 +138,7 @@ Game::input_next_move_and_update()
 {
   string direction;
   cout << msg_direction << endl;
-  cin >> direction;
+  getline(cin, direction);
 
   if (direction == "w") {
     m_player.at(0).update(Direction::north, m_worldRows, m_worldCols);
