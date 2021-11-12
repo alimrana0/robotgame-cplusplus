@@ -159,9 +159,9 @@ Game::input_next_move_and_update()
   // TODO: prompt user and input direction
 
   
-  for (RobotOrDebris r  : m_robotsAndDebris) {
-    if (!r.is_debris()) {
-      r.update(m_player.at(0));
+  for (unsigned int i = 0; i < m_robotsAndDebris.size(); ++i) {
+    if (!m_robotsAndDebris.at(i).is_debris()) {
+      m_robotsAndDebris.at(i).update(m_player.at(0));
     }
   }
   // TODO: update player and robot locations
