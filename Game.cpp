@@ -31,9 +31,17 @@ Game::input_and_read_world_from_file(const EntityCounter & counter)
   cin >> fileName;
   ifstream infile(fileName + ".txt");
 
-  if (!infile) {
+
+ if(infile && infile.peek() == std::ifstream::traits_type::eof()) {
+    throw invalid_argument(errmsg_world_shape);
+ 
+  }
+ if(!infile){
     throw invalid_argument(errmsg_world_file);
   }
+  
+ 
+  
 
   string line;
   size_t row = 0;
@@ -69,6 +77,8 @@ Game::input_and_read_world_from_file(const EntityCounter & counter)
   }
   m_worldRows = row - 1;
   m_worldCols = col - 1;
+
+  
 
   if (m_player.size() == 0) {
     throw invalid_argument(errmsg_world_player_missing);
@@ -123,6 +133,8 @@ Game::input_next_move_and_update()
   string direction;
   cout << msg_direction << endl;
   cin >> direction;
+
+
   // TODO: prompt user and input direction
 
   // TODO: update player and robot locations
