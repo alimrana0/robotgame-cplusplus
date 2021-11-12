@@ -88,8 +88,7 @@ RobotOrDebris::update(const Player & player)
       m_cell.row = m_cell.row + 1;
       else { m_cell.col = m_cell.row - 1;} 
     }
-    else {
-      if(m_cell.row + m_cell.col % 2 == 0) {
+    else if(m_cell.row + m_cell.col % 2 != 0) {
         if(m_cell.row < player.get_cell().row)
       m_cell.row = m_cell.row + 1;
       else { m_cell.row = m_cell.row - 1;}
@@ -100,7 +99,7 @@ RobotOrDebris::update(const Player & player)
       else { m_cell.col = m_cell.col - 1;}
     }
     }
-      }
+      
     }
 }
 
