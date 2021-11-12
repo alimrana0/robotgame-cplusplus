@@ -39,7 +39,7 @@ Game::input_and_read_world_from_file(const EntityCounter & counter)
   size_t row = 0;
   size_t col = 0;
   size_t lineCounter = 0;
-  // size_t colCounter = 0;
+  size_t colCounter = 0;
   size_t oldLength = 0;
   unsigned int itterations = 0;
   
@@ -77,12 +77,12 @@ Game::input_and_read_world_from_file(const EntityCounter & counter)
     // if (colCounter != col || col == 0) {
       
     // }
-    // colCounter = col;
+    colCounter = col;
     col = 0;
     ++row;
   }
-  m_worldRows = row - 1;
-  m_worldCols = col - 1;
+  m_worldRows = row;
+  m_worldCols = colCounter;
   if (line.size() == 0 && itterations == 0) {
       throw invalid_argument(errmsg_world_shape);
   }
@@ -117,17 +117,17 @@ Game::display_world() const
         inP = inP || p.get_cell() == currentC;
       }
       if (inRD && isD) {
-        world = world + "x";
+        world.append("x");
       } else if (inRD) {
-        world = world + "r";
+        world.append("r");
       } else if (inP) {
-        world = world + "p";
+        world.append("p");
       } else {
-        world = world + ".";
+        world.append(".");
       }
     }
     if (row + 1 < m_worldRows) {
-      world = world + "\n";
+      world.append("\n");
     }
   }
   cout << world << endl;
@@ -150,6 +150,8 @@ Game::input_next_move_and_update()
     m_player.at(0).update(Direction::west, m_worldRows, m_worldCols);
   } else if (direction == " ") {
     m_player.at(0).update(Direction::none, m_worldRows, m_worldCols);
+  } else {
+    throw invalid_argument(errmsg_direction);
   }
   // TODO: prompt user and input direction
 
