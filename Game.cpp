@@ -112,6 +112,9 @@ Game::display_world() const
         if (inRD) {
           isD = rd.is_debris();
         }
+        if (inRD) {
+          break;
+        }
       }
       for (Player p : m_player) {
         inP = inP || p.get_cell() == currentC;
