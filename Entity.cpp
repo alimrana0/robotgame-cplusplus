@@ -5,12 +5,15 @@ using namespace std;
 
 
 
-Player::Player(const Cell & cell, const EntityCounter & counter) // TODO
-{
+Player::Player(const Cell & cell, const EntityCounter & counter): // TODO
+m_cell(cell),
+m_counter(counter){
   // TODO
 }
 
-Player::Player(const Player & other) // TODO
+Player::Player(const Player & other): // TODO
+m_cell(other.m_cell),
+m_counter(//get other couter)
 {
   // TODO
 }
