@@ -144,13 +144,21 @@ Game::input_next_move_and_update()
   getline(cin, direction);
 
   if (direction == "w") {
+    if(m_player.at(0).get_cell().row > 0) {
     m_player.at(0).update(Direction::north, m_worldRows, m_worldCols);
+    }
   } else if (direction == "s") {
+    if(m_player.at(0).get_cell().row < m_worldRows) {
     m_player.at(0).update(Direction::south, m_worldRows, m_worldCols);
+    }
   } else if (direction == "d") {
+    if(m_player.at(0).get_cell().col < m_worldCols) {
     m_player.at(0).update(Direction::east, m_worldRows, m_worldCols);
+    }
   } else if (direction == "a") {
+    if(m_player.at(0).get_cell().col > 0) {
     m_player.at(0).update(Direction::west, m_worldRows, m_worldCols);
+    }
   } else if (direction == " ") {
     m_player.at(0).update(Direction::none, m_worldRows, m_worldCols);
   } else {
