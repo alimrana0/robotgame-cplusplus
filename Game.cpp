@@ -189,22 +189,28 @@ Game::input_next_move_and_update()
 
     }
   }
-
-  for (RobotOrDebris r : m_robotsAndDebris) {
+  vector<RobotOrDebris> copyV = m_robotsAndDebris;
+  size_t numRemoved = 0;
+  size_t index = 0;
+  for (RobotOrDebris r : copyV) {
     int similar = 0;
-    for (RobotOrDebris r2: m_robotsAndDebris) {
+    size_t index2 = 0;
+    for (RobotOrDebris r2: copyV) {
       if (r.get_cell() == r2.get_cell()) {
         ++similar;
       }
       if (similar > 1) {
-        r.make_debris();
-        r2.~RobotOrDebris();
+        m_robotsAndDebris.erase(m_robotsAndDebris.begin() + index - numRemoved);
+        ++numRemoved;
+        m_robotsAndDebris.at(index2 - numRemoved).make_debris();
       }
+      ++index2;
     }
     if (r.get_cell() == m_player.at(0).get_cell()) {
       m_player.erase(m_player.begin());
       return GameStatus::player_lost;
     }
+    ++index;
   }
   // TODO: handle collisions
 
