@@ -1,21 +1,26 @@
 -- Who worked on this assignment? Provide names and GitHub usernames.
+Ali Alyaqoub
+aalyaqoub
 
+Ali Rana
+alimrana0
 
 
 -- How many hours did it take you to complete this assignment?
-
+15
 
 
 -- Describe your approach to implementing the assignment.
-
+We used the concepts we learned from in class related to constructors, destructors, and iterators. 
+Then we tried to implemente the functions using this knowledge.
 
 
 -- Did you use any external resources? If so, cite them below.
-
+No
 
 
 -- (Optional) What was your favorite part of the assignment?
-
+Finishing
 
 
 -- (Optional) How would you improve the assignment?
