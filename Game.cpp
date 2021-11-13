@@ -202,7 +202,7 @@ Game::input_next_move_and_update()
       }
     }
     if (r.get_cell() == m_player.at(0).get_cell()) {
-      m_player.at(0).~Player();
+      m_player.erase(m_player.begin());
       return GameStatus::player_lost;
     }
   }
