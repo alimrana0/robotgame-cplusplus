@@ -200,9 +200,15 @@ Game::input_next_move_and_update()
         ++similar;
       }
       if (similar > 1) {
-        m_robotsAndDebris.erase(m_robotsAndDebris.begin() + index - numRemoved);
-        ++numRemoved;
-        m_robotsAndDebris.at(index2 - numRemoved).make_debris();
+        if (m_robotsAndDebris.size() > 0) {
+          if (!m_robotsAndDebris.at(index - numRemoved).is_debris()) {
+            m_robotsAndDebris.erase(m_robotsAndDebris.begin() + index - numRemoved);
+            ++numRemoved;
+            if (m_robotsAndDebris.size() > 0) {
+              m_robotsAndDebris.at(index2 - numRemoved).make_debris();
+            }
+          }
+        }
       }
       ++index2;
     }
